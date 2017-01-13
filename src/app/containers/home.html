@@ -7,8 +7,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>-->
-            <strong class="navbar-brand" href="#" style="#000">
-                <img src="app/img/logo.png" style="width: 30px; display: inline-block">
+            <strong class="navbar-brand" href="#" style="#000; cursor: pointer">
+                <img src="app/img/logo.png" style="width: 30px; display: inline-block;">
                 Hiring Hat
             </strong>
         </div>
@@ -32,31 +32,31 @@
 
         <div class="col-sm-3 col-md-2 col-lg-3 sidebar-offcanvas" id="sidebar" role="navigation" style="background: #eeeeee; padding-top: 20px; padding-bottom: 20px; height: 100vh">
             <div>
-                <i class="glyphicon glyphicon-search" style="padding: 4px; display: inline-block"></i>
+                <i class="glyphicon glyphicon-search" style="padding: 4px; display: inline-block; cursor: pointer"></i>
                 <!--<input type="text" class="form-control" placeholder="Search..." style="display: inline-block; width: 85% ">-->
                 <h4 style="display: inline-block; font-weight: bold">Buscar</h4>
             </div>
-            <i class="glyphicon glyphicon-bookmark" style="padding: 4px; margin-left: 20px"></i>
-            <i class="glyphicon glyphicon-refresh" style="padding: 4px"></i>
+            <i class="glyphicon glyphicon-bookmark" style="padding: 4px; margin-left: 20px; cursor: pointer"></i>
+            <i class="glyphicon glyphicon-refresh" style="padding: 4px; cursor: pointer"></i>
             <div class="form-group" style="margin-top: 20px">
                 <label for="exampleInputEmail1" class="my-text-input">término de Busqueda</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="término de Busqueda">
             </div>
             <div class="form-group" style="margin-top: 20px">
                 <label for="exampleInputEmail1" class="my-text-input">Nombre y Apellido</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre y Apellido">
             </div>
             <div class="form-group" style="margin-top: 20px">
                 <label for="exampleInputEmail1" class="my-text-input">Puesto</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Puesto">
             </div>
             <div class="form-group" style="margin-top: 20px">
                 <label for="exampleInputEmail1" class="my-text-input">Empleo</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Empleo">
             </div>
             <div class="form-group" style="margin-top: 20px">
                 <label for="exampleInputEmail1" class="my-text-input">Ubicación</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Ubicación">
             </div>
             <!--            <ul class="nav nav-sidebar">
                           <li class="active"><a href="#">Overview</a></li>
@@ -79,8 +79,12 @@
 
         </div><!--/span-->
 
+            <!--toggle sidebar button-->
+           
         <div class="col-sm-7 col-md-8 main" style="padding-bottom: 0px">
-
+ <p class="visible-xs">
+                <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></button>
+            </p>
             <div class="row">
                 <div class="col-lg-3">
                     <img src="app/img/chica.png" alt="imagen" class="img-circle" style="width: 150px">
@@ -88,7 +92,7 @@
                 <div class="col-lg-9">
                     <div style="position: relative">
                     <h3 style="display: inline-block">Nombre del usuario <small>(edad)</small></h3>
-                    <img   src="app/img/logo-ln.png" alt="imagen" style=";width: 30px; position: absolute; right: 10px; bottom: 10px">
+                    <img   src="app/img/logo-ln.png" alt="imagen" style="cursor: pointer;width: 30px; position: absolute; right: 10px; bottom: 10px">
                     <i style="float: right; text-decoration: underline; font-weight: 900; margin: 5px; position: absolute; right: 40px; bottom: 10px">CT</i>
                     <hr style="margin-top: 0px">
                     </div>
@@ -112,7 +116,7 @@
                 <div class="col-lg-8">
                     <h4>Experiencia</h4>
                     <hr style="margin-top: 0px">
-                    <i class="glyphicon glyphicon-pencil pull-right"></i>
+                    <i class="glyphicon glyphicon-pencil pull-right" style="cursor: pointer"></i>
                     <h5>Colonial Inc. <small>(2000-2001)</small></h5>
                     <span>Senior Java</span>
                     <h5 style="margin-bottom: 30px; margin-top: 20px">Red Hat <small>(2000-2001)</small></h5>
@@ -120,9 +124,9 @@
 
                     <h4 style="margin-top: 80px">Educación</h4>
                     <hr style="margin-top: 0px">
-                    <i class="glyphicon glyphicon-pencil pull-right"></i>
+                    <i class="glyphicon glyphicon-pencil pull-right" style="cursor: pointer"></i>
                 </div>
-                <div class="col-lg-4" style="background: #efefef;">
+                <div class="col-lg-4" style="background: #efefef; padding: 15px">
                     <h4 style="font-weight: bold">Salario</h4>
                     <div>
                         <small>Actual</small>
@@ -135,19 +139,16 @@
                     </div>
                     <h4 style="font-weight: bold">Motivo de Rechazo</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    <h4 style=" margin-bottom: 100px; font-weight: bold">Informe</h4>
+                    <h4 style=" margin-bottom: 50px; font-weight: bold">Informe</h4>
                 </div>
             </div>
 
-            <!--toggle sidebar button-->
-            <p class="visible-xs">
-                <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></button>
-            </p>
 
 
         </div>
         <div class="col-sm-1 col-md-1 main hidden-xs hidden-sm" style="border-left: 1px solid #000; height: 100vh">
             <div ng-repeat="i in [1, 2, 3, 4, 5,6,7,8,9,10]" style="position: relative">
+                <i class="glyphicon glyphicon-arrow-left"></i>
                 <div style="position: absolute; width: 20px; height: 20px; z-index: 2;">
                     <input type="checkbox">
                 </div>
