@@ -23,23 +23,23 @@
             <i class="glyphicon glyphicon-refresh" style="padding: 4px; cursor: pointer"></i>
             <div class="form-group" style="margin-top: 20px">
                 <label for="exampleInputEmail1" class="my-text-input">término de Busqueda</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="término de Busqueda">
+                <input type="text" class="form-control" id="exampleInputEmail1" ng-model="search.$" placeholder="término de Busqueda">
             </div>
             <div class="form-group" style="margin-top: 20px">
                 <label for="exampleInputEmail1" class="my-text-input">Nombre y Apellido</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre y Apellido">
+                <input type="text" class="form-control" id="exampleInputEmail1" ng-model="search.name" placeholder="Nombre y Apellido">
             </div>
             <div class="form-group" style="margin-top: 20px">
                 <label for="exampleInputEmail1" class="my-text-input">Puesto</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Puesto">
+                <input type="text" class="form-control" id="exampleInputEmail1" ng-model="search.rol" placeholder="Puesto">
             </div>
             <div class="form-group" style="margin-top: 20px">
                 <label for="exampleInputEmail1" class="my-text-input">Empleo</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Empleo">
+                <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Empleo">
             </div>
             <div class="form-group" style="margin-top: 20px">
                 <label for="exampleInputEmail1" class="my-text-input">Ubicación</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Ubicación">
+                <input type="text" class="form-control" id="exampleInputEmail1" ng-model="search.city" placeholder="Ubicación">
             </div>
 
         </div>
@@ -56,8 +56,13 @@
                             </select> 
                         
                     </div>
-                    <div style=" border-radius: 0px;float: left; margin-left: 5px">
-                        <i class="glyphicon glyphicon-arrow-up" style="margin: 5px; float: left;cursor: pointer;"></i>
+                    <div ng-if="$ctrl.ordenar" style=" border-radius: 0px;float: left; margin-left: 5px">
+                        
+                        <i class="glyphicon glyphicon-arrow-up" ng-click="$ctrl.ordenar = !$ctrl.ordenar" style="margin: 5px; float: left;cursor: pointer;"></i>
+                    </div>
+                    <div ng-if="!$ctrl.ordenar" style=" border-radius: 0px;float: left; margin-left: 5px">
+                        
+                        <i class="glyphicon glyphicon-arrow-down" ng-click="$ctrl.ordenar = !$ctrl.ordenar" style="margin: 5px; float: left;cursor: pointer;"></i>
                     </div>
                     
                 </div>
@@ -67,30 +72,32 @@
                             </select>
                 </div>
             </div>
-            <div ng-repeat="i in [1, 2, 3, 4, 5]" style="position: relative">
-            <div class="row" style="border-bottom: 1px solid">
+            <div ng-repeat="user in $ctrl.users | filter:search | orderBy:'user.name':$ctrl.ordenar" style="position: relative">
+                <div class="row" style="border-bottom: 1px solid;" ng-class="{disabled: user.check === false }" >
                 <div class="col-lg-2 col-md-3 col-sm-4 hidden-xs">
                     <div style="position: absolute; width: 20px; height: 20px; margin-top: 55px; ">
-                    <input type="checkbox">
+                        <input type="checkbox" ng-click="user.check=!user.check" checked="{{user.check}}">
                 </div>
-                    <img src="app/img/chica.png" alt="imagen" class="img-circle" style="width: 120px;margin-left: 20px;">
+                    <img src="app/img/{{user.img}}" alt="imagen" class="img-circle" style="width: 120px;margin-left: 20px;">
                 </div>
                 <div class="col-lg-10 col-md-9 col-sm-8 ">
 
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <div style="position: relative">
-                        <a ui-sref="detail" ><h4 style="display: inline-block; text-decoration: none; color: black">Sofia Gonzalez <small>(28 años)</small></h4></a>
+                                <a ng-click="$ctrl.detail(user)" ><h4 style="display: inline-block;cursor: pointer; text-decoration: none; color: black">{{user.name}} <small>({{user.age}} años)</small></h4></a>
                         
                     </div>
                             
-                             <h5 style="display: inline;color: #969393 ">Java Developer / Cordova</h5>
+                             <h5 style="display: inline;color: #969393 ">{{user.rol}} / {{user.city}}</h5>
                             
                              <br>
                             
-                                <span style="margin-top: 15px ; display: inline-block; font-size: 12pt;">2000$ / 15000$</span><i class="glyphicon glyphicon-question-sign" style="cursor: pointer; margin-left: 5px;"></i>
+                                <span style="margin-top: 15px ; display: inline-block; font-size: 12pt;">{{user.currentSalary}}$ / {{user.expectedSalary}}$</span><i class="glyphicon glyphicon-question-sign" style="cursor: pointer; margin-left: 5px;"></i>
                            
-                            
+                            <div ng-repeat="empleo in user.experience " >
+                                <span>{{empleo.company}}  {{empleo.startYear}} ~ {{empleo.finishYear}}</span>
+                                </div>
                             
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">

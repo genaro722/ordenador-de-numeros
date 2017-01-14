@@ -6,9 +6,12 @@ angular
         });
 
 function Home() {
+    $ctrl = this;
     $(document).ready(function () {
         $('[data-toggle=offcanvas]').click(function () {
             $('.row-offcanvas').toggleClass('active');
         });
     });
+    
+    $ctrl.user = JSON.parse(localStorage.getItem('user'));
 }

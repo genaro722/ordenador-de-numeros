@@ -87,3 +87,6 @@ footer {
     color: #696969;
     font-size: 12px;
 }
+.disabled{
+    background-color: #eeeeee;
+}

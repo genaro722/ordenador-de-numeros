@@ -3,7 +3,7 @@
         <div class="navbar-header">
             <strong class="navbar-brand" href="#" style="#000; cursor: pointer">
                 <img src="app/img/logo.png" style="width: 30px; display: inline-block;">
-                Hiring Hat
+                <a ui-sref="list" style="color: black">Hiring Hat</a> 
             </strong>
         </div>
     </div>
@@ -47,11 +47,11 @@
         <div class="col-sm-7 col-md-8 main" style="padding-bottom: 0px">
             <div class="row">
                 <div class="col-lg-3">
-                    <img src="app/img/chica.png" alt="imagen" class="img-circle" style="width: 150px">
+                    <img src="app/img/{{$ctrl.user.img}}" alt="imagen" class="img-circle" style="width: 150px">
                 </div>
                 <div class="col-lg-9">
                     <div style="position: relative">
-                        <h3 style="display: inline-block">Sofia Gonzalez <small>(31 años)</small></h3>
+                        <h3 style="display: inline-block">{{$ctrl.user.name}} <small>(31 años)</small></h3>
                         <div class="hidden-xs">
                             <img  class="hidden-xs" src="app/img/logo-ln.png" alt="imagen" style="cursor: pointer;width: 30px; position: absolute; right: 10px; bottom: 10px">
                         <i class="hidden-xs" style="float: right; text-decoration: underline; font-weight: 900; margin: 5px; position: absolute; right: 40px; bottom: 10px">CT</i>
@@ -61,16 +61,16 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-6">
-                            <h5><i class="glyphicon glyphicon-phone" style="margin: 5px"></i>telefono</h5>
-                            <h5><i class="glyphicon glyphicon-envelope" style="margin: 5px"></i>correo</h5>
+                            <h5><i class="glyphicon glyphicon-phone" style="margin: 5px"></i>{{$ctrl.user.phone}}</h5>
+                            <h5><i class="glyphicon glyphicon-envelope" style="margin: 5px"></i>{{$ctrl.user.email}}</h5>
                             <select class="form-control" style="width: 60%; background: #d0cece">
                                 <option>Vincular a Trabajo</option>
                             </select>
                         </div>
                         <div class="col-lg-6">
-                            <h5 style="margin: 25px">Java</h5>
-                            <h5 style="margin: 25px">Caracas, Venezuela</h5>
-                            <h5 style="margin: 25px">2000$ / 15000$</h5>
+                            <h5 style="margin: 25px">{{$ctrl.user.rol}}</h5>
+                            <h5 style="margin: 25px">{{$ctrl.user.country}}, {{$ctrl.user.city}}</h5>
+                            <h5 style="margin: 25px">{{$ctrl.user.currentSalary}}$ / {{$ctrl.user.expectedSalary}}$</h5>
                         </div>
                     </div>
                 </div>
@@ -79,26 +79,25 @@
                 <div class="col-lg-8">
                     <h4>Experiencia</h4>
                     <hr style="margin-top: 0px">
-                    <i class="glyphicon glyphicon-pencil pull-right" style="cursor: pointer"></i>
-                    <h5>Colonial Inc. <small>(2000-2001)</small></h5>
-                    <span>Senior Java</span>
-                    <h5 style="margin-bottom: 30px; margin-top: 20px">Red Hat <small>(2000-2001)</small></h5>
-                    <h5 style="margin-bottom: 30px">Antergos <small>(2000-2001)</small></h5>
-
-                    <h4 style="margin-top: 80px">Educación</h4>
-                    <hr style="margin-top: 0px">
+                    <div ng-repeat="empleo in $ctrl.user.experience " >
+                        <div style="margin-top: 25px;">
+                            <span>{{empleo.company}}  {{empleo.startYear}} ~ {{empleo.finishYear}}</span>
+                            <span style="display: block;margin-top: 10px;">{{empleo.employment}} </span>
+                        </div>
+                                
+                                </div>
                     <i class="glyphicon glyphicon-pencil pull-right" style="cursor: pointer"></i>
                 </div>
                 <div class="col-lg-4" style="background: #efefef; padding: 15px">
                     <h4 style="font-weight: bold">Salario</h4>
                     <div>
                         <small>Actual</small>
-                        <span class="pull-right" style="font-weight: bold">$30.000</span>
+                        <span class="pull-right" style="font-weight: bold">${{$ctrl.user.currentSalary}}</span>
                     </div>
 
                     <div>
                         <small>Pretendido</small>
-                        <span class="pull-right" style="font-weight: bold">$50.000</span>
+                        <span class="pull-right" style="font-weight: bold">${{$ctrl.user.expectedSalary}}</span>
                     </div>
                     <h4 style="font-weight: bold">Motivo de Rechazo</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
