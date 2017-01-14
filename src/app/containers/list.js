@@ -123,6 +123,7 @@ function Home($state) {
     
     $ctrl.detail = function(user){
       localStorage.setItem("user",JSON.stringify(user));
+      localStorage.setItem("users",JSON.stringify($ctrl.users));
       $state.go('detail');
     };
     

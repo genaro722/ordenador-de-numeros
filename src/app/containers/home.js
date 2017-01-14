@@ -13,5 +13,8 @@ function Home() {
         });
     });
     
+    
+    
     $ctrl.user = JSON.parse(localStorage.getItem('user'));
+    $ctrl.users = JSON.parse(localStorage.getItem('users'));
 }

@@ -23,23 +23,23 @@
             <i class="glyphicon glyphicon-refresh" style="padding: 4px; cursor: pointer"></i>
             <div class="form-group" style="margin-top: 20px">
                 <label for="exampleInputEmail1" class="my-text-input">término de Busqueda</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="término de Busqueda">
+                <input type="text" class="form-control" id="exampleInputEmail1" ng-model="search.$" placeholder="término de Busqueda">
             </div>
             <div class="form-group" style="margin-top: 20px">
                 <label for="exampleInputEmail1" class="my-text-input">Nombre y Apellido</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre y Apellido">
+                <input type="text" class="form-control" id="exampleInputEmail1" ng-model="search.name" placeholder="Nombre y Apellido">
             </div>
             <div class="form-group" style="margin-top: 20px">
                 <label for="exampleInputEmail1" class="my-text-input">Puesto</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Puesto">
+                <input type="text" class="form-control" id="exampleInputEmail1" ng-model="search.rol" placeholder="Puesto">
             </div>
             <div class="form-group" style="margin-top: 20px">
                 <label for="exampleInputEmail1" class="my-text-input">Empleo</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Empleo">
+                <input type="text" class="form-control" id="exampleInputEmail1" ng-model="search.$" placeholder="Empleo">
             </div>
             <div class="form-group" style="margin-top: 20px">
                 <label for="exampleInputEmail1" class="my-text-input">Ubicación</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Ubicación">
+                <input type="text" class="form-control" id="exampleInputEmail1" ng-model="search.city" placeholder="Ubicación">
             </div>
 
         </div>
@@ -109,14 +109,17 @@
 
         </div>
         <div class="col-sm-1 col-md-1 main hidden-xs hidden-sm" style="border-left: 1px solid #000; height: 100vh">
-            <div ng-repeat="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" style="position: relative">
-                <div style="position: absolute; width: 20px; height: 20px; z-index: 2;">
+            <div ng-repeat="user in $ctrl.users | filter:search" style="position: relative">
+                <div ng-if="user.check === true">
+                   <div style="position: absolute; width: 20px; height: 20px; z-index: 2;">
                     <input type="checkbox" checked="true">
                 </div>
-                <img  src="app/img/chica.png" alt="imagen" class="img-circle" style="width: 50px; margin-bottom: 10px">
+                <img  src="app/img/{{user.img}}" alt="imagen" class="img-circle" style="width: 50px; margin-bottom: 10px">
                 <div style="text-align: center; position: absolute; background: rgba(0, 0, 0, 0.79); width: 30px; height: 30px; z-index: 2; border-radius: 20px; bottom: 0px; left: 35px; margin-top: 5px">
                     <p style="color: white; margin-top: 6px; font-size: 10px">7/10</p>
+                </div> 
                 </div>
+                
             </div>
         </div>
     </div>
