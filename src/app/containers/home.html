@@ -52,8 +52,11 @@
                 <div class="col-lg-9">
                     <div style="position: relative">
                         <h3 style="display: inline-block">Nombre del usuario <small>(edad)</small></h3>
-                        <img   src="app/img/logo-ln.png" alt="imagen" style="cursor: pointer;width: 30px; position: absolute; right: 10px; bottom: 10px">
-                        <i style="float: right; text-decoration: underline; font-weight: 900; margin: 5px; position: absolute; right: 40px; bottom: 10px">CT</i>
+                        <div class="hidden-xs">
+                            <img  class="hidden-xs" src="app/img/logo-ln.png" alt="imagen" style="cursor: pointer;width: 30px; position: absolute; right: 10px; bottom: 10px">
+                        <i class="hidden-xs" style="float: right; text-decoration: underline; font-weight: 900; margin: 5px; position: absolute; right: 40px; bottom: 10px">CT</i>
+                        </div>
+                        
                         <hr style="margin-top: 0px">
                     </div>
                     <div class="row">
@@ -109,7 +112,7 @@
         <div class="col-sm-1 col-md-1 main hidden-xs hidden-sm" style="border-left: 1px solid #000; height: 100vh">
             <div ng-repeat="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" style="position: relative">
                 <div style="position: absolute; width: 20px; height: 20px; z-index: 2;">
-                    <input type="checkbox">
+                    <input type="checkbox" checked="true">
                 </div>
                 <img  src="app/img/chica.png" alt="imagen" class="img-circle" style="width: 50px; margin-bottom: 10px">
                 <div style="text-align: center; position: absolute; background: rgba(0, 0, 0, 0.79); width: 30px; height: 30px; z-index: 2; border-radius: 20px; bottom: 0px; left: 35px; margin-top: 5px">

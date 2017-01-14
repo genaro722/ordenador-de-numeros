@@ -9,11 +9,11 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $stateProvider
     .state('list', {
-      url: '/list',
+      url: '/',
       component: 'list'
     })
-    .state('home', {
-      url: '/',
-      component: 'home'
+    .state('detail', {
+      url: '/detail',
+      component: 'detail'
     });
 }
