@@ -1,0 +1,120 @@
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background: #fff">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <strong class="navbar-brand" href="#" style="#000; cursor: pointer">
+                <img src="app/img/logo.png" style="width: 30px; display: inline-block;">
+                Hiring Hat
+            </strong>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid" style="min-width: 100%; margin: 0px">
+
+    <div class="row row-offcanvas row-offcanvas-left">
+
+        <div class="col-sm-3 col-md-2 col-lg-3 sidebar-offcanvas" id="sidebar" role="navigation" style="background: #eeeeee; padding-top: 20px; padding-bottom: 20px; height: 100vh">
+            <div>
+                <i class="glyphicon glyphicon-search" style="padding: 4px; display: inline-block; cursor: pointer"></i>
+                <h4 style="display: inline-block; font-weight: bold">Buscar</h4>
+            </div>
+            <i class="glyphicon glyphicon-bookmark" style="padding: 4px; margin-left: 20px; cursor: pointer"></i>
+            <i class="glyphicon glyphicon-refresh" style="padding: 4px; cursor: pointer"></i>
+            <div class="form-group" style="margin-top: 20px">
+                <label for="exampleInputEmail1" class="my-text-input">término de Busqueda</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="término de Busqueda">
+            </div>
+            <div class="form-group" style="margin-top: 20px">
+                <label for="exampleInputEmail1" class="my-text-input">Nombre y Apellido</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre y Apellido">
+            </div>
+            <div class="form-group" style="margin-top: 20px">
+                <label for="exampleInputEmail1" class="my-text-input">Puesto</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Puesto">
+            </div>
+            <div class="form-group" style="margin-top: 20px">
+                <label for="exampleInputEmail1" class="my-text-input">Empleo</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Empleo">
+            </div>
+            <div class="form-group" style="margin-top: 20px">
+                <label for="exampleInputEmail1" class="my-text-input">Ubicación</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Ubicación">
+            </div>
+
+        </div>
+
+        <div class="col-sm-8 col-md-9 main" style="padding-bottom: 0px">
+            <div class="row hidden-xs" style="border-bottom: 1px solid;">
+                <div class="col-lg-6 col-md-8 col-sm-8 hidden-xs" style="margin-bottom: 30px;">
+                    <div style=" border-radius: 0px;float: left; margin-top: 5px;"> 
+                        <span>ORDENAR</span>
+                    </div>
+                    <div style=" border-radius: 0px;float: left; margin-left: 20px">
+                       <select class="form-control" >
+                                <option>Nombre</option>
+                            </select> 
+                        
+                    </div>
+                    <div style=" border-radius: 0px;float: left; margin-left: 5px">
+                        <i class="glyphicon glyphicon-arrow-up" style="margin: 5px; float: left;cursor: pointer;"></i>
+                    </div>
+                    
+                </div>
+                <div class="col-lg-6 col-md-4 col-sm-4 ">
+                    <select class="form-control" style="clear: both; width: 50%; background: #d0cece; border-radius: 0px; margin-right: 0px; float: right;">
+                                <option>Vincular a Trabajo</option>
+                            </select>
+                </div>
+            </div>
+            <div ng-repeat="i in [1, 2, 3, 4, 5]" style="position: relative">
+            <div class="row" style="border-bottom: 1px solid">
+                <div class="col-lg-2 col-md-3 col-sm-4 hidden-xs">
+                    <div style="position: absolute; width: 20px; height: 20px; margin-top: 55px; ">
+                    <input type="checkbox">
+                </div>
+                    <img src="app/img/chica.png" alt="imagen" class="img-circle" style="width: 120px;margin-left: 20px;">
+                </div>
+                <div class="col-lg-10 col-md-9 col-sm-8 ">
+
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div style="position: relative">
+                        <h4 style="display: inline-block">Sofia Gonzalez <small>(28 años)</small></h4>
+                        
+                    </div>
+                            
+                             <h5 style="display: inline;color: #969393 ">Java Developer / Cordova</h5>
+                            
+                             <br>
+                            
+                                <span style="margin-top: 15px ; display: inline-block; font-size: 12pt;">2000$ / 15000$</span><i class="glyphicon glyphicon-question-sign" style="cursor: pointer; margin-left: 5px;"></i>
+                           
+                            
+                            
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+<div >
+    
+    
+    <i class="glyphicon glyphicon-link" style="margin: 5px; float: right;cursor: pointer;"></i>
+    <i class="glyphicon glyphicon-share" style="margin: 5px; float: right;cursor: pointer;"></i>
+    <img   src="app/img/logo-ln.png" alt="imagen" style="float: right; cursor: pointer;width: 30px; right: 10px; bottom: 10px">
+    <i class="glyphicon glyphicon-envelope" style="margin: 5px; float: right;cursor: pointer;"></i>
+    <i class="glyphicon glyphicon-phone" style="margin: 5px; float: right;cursor: pointer;"></i>
+    <small style="margin: 5px; float: right;cursor: pointer;">Ultima actualización 09/10/16</small>
+</div>
+                            <select class="form-control" style="clear: both; width: 60%; background: #d0cece; border-radius: 0px; margin-top: 40px; float: right;">
+                                <option>Vincular a Trabajo</option>
+                            </select>
+                            
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
