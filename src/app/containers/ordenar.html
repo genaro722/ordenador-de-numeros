@@ -1,0 +1,35 @@
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background: #fff">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <strong class="navbar-brand">
+                Ordenador de Serie
+            </strong>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid" style="min-width: 100%; margin: 0px">
+
+    <div class="row row-offcanvas row-offcanvas-left">
+
+        <div class="col col-lg-offset-3 col-lg-5 col-md-offset-3 col-md-5 col-sm-offset-2 col-sm-8 col-xs-offset-2 col-xs-8 main" style="padding-bottom: 0px">
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Ingrese un Numero</label>
+                    <input type="number" class="form-control" placeholder="7164682" ng-model="$ctrl.numero" ng-change="$ctrl.verificar()">
+                </div>
+            </form>            
+            <div class="row">
+                <p>{{$ctrl.text}}</p>
+            </div>
+            <button class="btn btn-primary btn-lg btn-block" ng-click="$ctrl.preOrdenar()" ng-disabled="$ctrl.cargando">
+                <div ng-hide="$ctrl.cargando">Ordenar</div>
+                <div ng-show="$ctrl.cargando">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </div>
+            </button>
+        </div>
+    </div>
+
+</div>

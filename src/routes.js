@@ -5,15 +5,11 @@ angular
 /** @ngInject */
 function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $locationProvider.html5Mode(true).hashPrefix('!');
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('principal');
 
   $stateProvider
-    .state('list', {
+    .state('principal', {
       url: '/',
-      component: 'list'
-    })
-    .state('detail', {
-      url: '/detail',
-      component: 'detail'
+      component: 'principal'
     });
 }
