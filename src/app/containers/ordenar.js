@@ -6,23 +6,25 @@ angular
         });
 
 function principalCtrl($timeout) {
-    
+
     var $ctrl = this;
     $ctrl.numero; // VALOR DEL INPUT
     $ctrl.text = "";
     $ctrl.cargando = false;
-    
+
     $ctrl.verificar = function () {
         var repetido = false; // llave que permite saber si el numero nuevo sera permitido o no
         var array = $ctrl.numero.toString();
         var ultimo = array[array.length - 1]; // ESTE ES EL ULTIMO NUMERO INGRESADO
         var nuevo = ""; // VALOR QUE VA A SUSTITUIR EL VALOR DEL INPUT
-        array = array.split(""); 
-        array.splice(array.length - 1, 1); 
+        array = array.split("");
+        array.splice(array.length - 1, 1);
         for (var i = 0; i < array.length; i++) {
             nuevo = nuevo + array[i];
             if (array[i] === ultimo) {
+                console.log("repetido");
                 repetido = true; // EL NUMERO SE ENCUENTRA PRESENTE EN LA CADENA
+                $ctrl.numero = parseInt(nuevo);
             }
         }
         if (array.length > 1) {
@@ -59,7 +61,7 @@ function principalCtrl($timeout) {
         var size = array.length;
         $ctrl.ordenarBurbuja(array, numero);
         $timeout(function () { // SE UTILIZA EL TIMEOUT PARA IR MOSTRANDO COMO VAN ACOMODANDOSE LOS NUMEROS
-            if (numero <= size && array.toString() !== $ctrl.cadenaOrganizada.toString()) { 
+            if (numero <= size && array.toString() !== $ctrl.cadenaOrganizada.toString()) {
                 // AUN NO ESTA ORGANIZADO EL ARRAY SE PROCEDE A COMPARAR EL SIGUIENTE INDICE DEL ARRAY Y REPETIR LA FUNCION
                 numero = numero + 1;
                 $ctrl.numero = parseInt(array.join(''));
