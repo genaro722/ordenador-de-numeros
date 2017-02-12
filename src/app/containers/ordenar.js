@@ -22,7 +22,6 @@ function principalCtrl($timeout) {
         for (var i = 0; i < array.length; i++) {
             nuevo = nuevo + array[i];
             if (array[i] === ultimo) {
-                console.log("repetido");
                 repetido = true; // EL NUMERO SE ENCUENTRA PRESENTE EN LA CADENA
                 $ctrl.numero = parseInt(nuevo);
             }
@@ -31,7 +30,7 @@ function principalCtrl($timeout) {
             if (repetido === false) {// COMO NO ESTA PRESENTE EL NUMERO NUEVO EN LA LISTA SE QUEDA DE ULTIMO
                 nuevo = nuevo + ultimo;
             } else {// SI EL NUMERO NUEVO ESTA PRESENTE SE MUESTRA UN MENSAJE Y NO SE AGREGA EN LA LISTA
-                $ctrl.text = "El numero: " + ultimo + " esta repetido";
+                $ctrl.text = "El numero: " + ultimo + " ya fue ingresado";
                 $ctrl.ocultarTexto();
             }
             $ctrl.numero = parseInt(nuevo);

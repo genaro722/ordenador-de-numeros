@@ -26,6 +26,11 @@ footer {
     right: 15px;
     width: 100%;
 }
+.mi-input::-webkit-input-placeholder { color: rgba(31, 93, 90, 0.4); } /* WebKit */
+.mi-input:-moz-placeholder { color: rgba(31, 93, 90, 0.4); } /* Firefox 18- */
+.mi-input::-moz-placeholder { color: rgba(31, 93, 90, 0.4); } /* Firefox 19+ */
+.mi-input:-ms-input-placeholder { color: rgba(31, 93, 90, 0.4); } /* IE 10+ */
+
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -39,6 +44,9 @@ input[type=number] {
     font-size: 30px !important;
     text-align: center;
     letter-spacing: 20px;
+    color: #1f5d5a;
+    font-weight: bold;
+    background: hsla(0, 4%, 82%, 0.26);
 }
 /*
  * Off Canvas

@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <strong class="navbar-brand white-text">
-                Ordenador de Serie
+                ORDENADOR DE SERIE
             </strong>
         </div>
     </div>
@@ -10,10 +10,10 @@
 <div class="container-fluid" style="min-width: 100%; margin: 0px">
     <div class="row row-offcanvas row-offcanvas-left">
         <div class="col col-lg-offset-3 col-lg-5 col-md-offset-3 col-md-5 col-sm-offset-2 col-sm-8 col-xs-offset-2 col-xs-8 main" style="padding-bottom: 0px">
-            <form>
+            <form ng-submit="$ctrl.preOrdenar()">
                 <div class="form-group">
                     <label style="font-size: 20px">Ingrese un Numero</label>
-                    <input type="number" class="form-control" placeholder="7164682" ng-model="$ctrl.numero" ng-change="$ctrl.verificar()">
+                    <input type="number" class="form-control mi-input" placeholder="7164682" ng-model="$ctrl.numero" ng-change="$ctrl.verificar()">
                 </div>
             </form>            
             <div class="row">
