@@ -8,7 +8,7 @@ angular
 function principalCtrl($timeout) {
     
     var $ctrl = this;
-    $ctrl.numero = 0; // VALOR DEL INPUT
+    $ctrl.numero; // VALOR DEL INPUT
     $ctrl.text = "";
     $ctrl.cargando = false;
     
@@ -68,7 +68,7 @@ function principalCtrl($timeout) {
                 $ctrl.cargando = false;
                 $ctrl.numero = parseInt(array.join(''));
             }
-        }, 1000);
+        }, 500);
     };
 
     $ctrl.cambio = function (array, primero, segundo) { // FUNCION QUE CAMBIA VALORES ENTRE DOS INDICES DE UN ARRAY

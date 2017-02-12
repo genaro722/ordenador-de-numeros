@@ -11,7 +11,35 @@ footer {
     padding-right: 15px;
     background-color: #fff;
 }
-
+.white-text{
+    color: #fff !important;
+}
+.red-text{
+    color: #F24747;
+}
+.text-right{
+    text-align: right
+}
+.abajo{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 100%;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance:textfield;
+}
+.form-control{
+    height: 55px !important;
+    font-size: 30px !important;
+    text-align: center;
+    letter-spacing: 20px;
+}
 /*
  * Off Canvas
  * --------------------------------------------------
