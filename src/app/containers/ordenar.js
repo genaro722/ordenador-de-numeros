@@ -30,14 +30,14 @@ function principalCtrl($timeout) {
             if (repetido === false) {// COMO NO ESTA PRESENTE EL NUMERO NUEVO EN LA LISTA SE QUEDA DE ULTIMO
                 nuevo = nuevo + ultimo;
             } else {// SI EL NUMERO NUEVO ESTA PRESENTE SE MUESTRA UN MENSAJE Y NO SE AGREGA EN LA LISTA
-                $ctrl.text = "El numero: " + ultimo + " ya fue ingresado";
-                $ctrl.ocultarTexto();
+                $ctrl.mostratTexto("El numero: " + ultimo + " ya fue ingresado");
             }
             $ctrl.numero = parseInt(nuevo);
         }
     };
 
-    $ctrl.ocultarTexto = function () {
+    $ctrl.mostratTexto = function (texto) {
+        $ctrl.text = texto;
         $timeout(function () {// DESPUES DE DOS SEGUNDOS SE QUITA EL MENSAJE
             $ctrl.text = "";
         }, 2000);
@@ -51,8 +51,7 @@ function principalCtrl($timeout) {
             var numero = 0; // comienza a comparar desde la posición 0 del array
             $ctrl.ordenar(array, numero);
         } else {
-            $ctrl.text = "Debe ingresar más de un numero";
-            $ctrl.ocultarTexto();
+            $ctrl.mostratTexto("Debe ingresar más de un numero");
         }
     };
 
@@ -88,4 +87,5 @@ function principalCtrl($timeout) {
             }
         }
     };
+    
 }
